@@ -1,0 +1,239 @@
+{% extends 'base_nfr.html' %}
+{% load static %}
+<!--Css-->
+{% block css %}
+<link rel="stylesheet" href="{% static 'stylos/css/bootstrap.min.css' %}"/>
+<link rel="stylesheet" href="{% static 'stylos/css/sidebar.css' %}"/>
+<!--boostrap icono-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+{% endblock %}
+<!--content-->
+{% block content %}
+<link href="{% static 'css/css-estilos_das.css' %}" rel="stylesheet">
+<link href="{% static 'css/css-paginacion_das.css' %}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+<!--   Area Form    -->
+<script type="text/javascript">
+    function submitByEnter(e) {
+        if (e.keyCode == 13) {
+            document.getElementById("FormListado:b_RealizaBusqueda").click();
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+<br>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-1">
+        <a href="{% url 'home' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" style="color:black;" width="35" height="35" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="col-8">
+        <h1 class="gUppercase gFontWeight700" style="padding-left:94px;">
+            Reglamento Nacional<br>
+            de Edificaciones
+        </h1>
+    </div>
+
+    <div class="col-1">
+        <a href="{% url 'norma_edificatoria' %}">
+            <svg xmlns="http://www.w3.org/2000/svg" style="color:black;" width="35" height="45" fill="currentColor" class="bi bi-skip-end-btn-fill" viewBox="0 0 16 16">
+                <path d="M0 12V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm6.79-6.907A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407L9.5 8.972V10.5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-1 0v1.528L6.79 5.093z"/>
+            </svg>
+        </a>
+    </div>
+    <div class="col-1"></div>
+</div>
+
+
+
+<div class="gContainer gPositionRelative gContenido" style="margin-top:-45px;">
+    <div class="gAlignCenter">
+        <hr class="gSeparator gSeparatorTrans gSeparator15">
+        
+        <!--<h4 class="gFontWeight300">
+            Encuentre aquí todas las resoluciones 
+            <b>Por favor ingrese a una categoría.</b>
+        </h4>-->
+        <hr class="gWidth100 gSeparator gSeparatorTrans gInlineBlock">
+        
+        <hr class="gSeparator gSeparatorTrans gSeparator20">
+        <div class="gRowTemp">
+            <a href="#" class="gInlineBlock gWidth200 gPositionRelative gCircleBox gVerticalTop gPaddingBottom25 gCircleBox2">
+                <div class="gWidth50 gHeight3 gFondoCircleNaranja gBlock gPositionAbsolute gBottom0 gLeft0 gRight0 gMarginAuto gAnimate3 gZindex1 gLine"></div>
+                <div class="gWidth120 gHeight120 gLineHeight120 gInlineBlock gFondoBlanco gBorderRadius100p gBorder4 gBorderCircleNaranaja gBoxShadowBottom gPositionRelative gAnimate gTop0 gZindex2 gImgg">
+                    <img src="{% static 'images/img-propiedad-intelectual2.png' %}" class="gInlineBlock gWidth50 gMarginTop31">
+                    
+                </div>
+                <h3 class="gUppercase gMarginTop20 gLineHeight25 gFontWeight700 gPositionRelative gZindex2">
+                    Reglamento Nacional de
+                    <br>
+                    Edificaciones
+                </h3></a>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <h4 class="text-center">NORMAS TÉCNICAS DEL REGLAMENTO NACIONAL DE EDIFICACIONES VIGENTE</h4>
+    <br>
+    <div class="row">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6"><h5>Titulo I<br><h5>Generalidades</h5></div>
+            </div>
+            <div class="row">
+                <div class="col-6">G.010</div>
+                <div class="col-6">Consideraciones Básicas</div>
+            </div>
+            <div class="row">
+                <div class="col-6">G.020</div>
+                <div class="col-6">Principios Generales</div>
+            </div>
+            <div class="row">
+                <div class="col-6">G.030</div>
+                <div class="col-6">
+                    Derechos y Responsabilidades<br>
+                    Modificación del artículo 11<br>
+                    (R.M.Nª 341-2018-VIVIENDA)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">G.040</div>
+                <div class="col-6">Definiciones<br>
+                    (R.M.Nº 029-2021-VIVIENDA)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">G.050</div>
+                <div class="col-6">Seguridad durante la Construcción<br>
+                    (D.S.Nª 010-2009-VIVIENDA)
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="row">
+                    <div class="col-6"></div>
+                    <div class="col-6">Titulo II HABILITACIONES URBANAS </div>
+                </div>
+                <div class="row">
+                    <div class="col"><h6 class="text-center">CONSIDERACIONES GENERALES DE LAS HABILITACIONES </h6></div>
+                </div>
+                <div class="row">
+                    <div class="col-6">GH.010</div>
+                    <div class="col-6">Componentes de Diseño Urbano<br>
+                                      (D.S.Nª 006-2011-VIVIENDA
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">GH.020</div>
+                    <div class="col-6">Componentes de Diseño Urbano<br>
+                                      (D.S.Nª 006-2011-VIVIENDA)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6"> II.1</div>
+                    <div class="col-6">TIPOS DE HABILITACIONES</div>                    
+                </div>
+                <div class="row">
+                    <div class="col-6">TH.010</div>
+                    <div class="col-6">Habilitaciones residenciales</div>
+                </div>
+                <div class="row">
+                    <div class="col-6">TH.020</div>
+                    <div class="col-6">Habilitaciones Comerciales<br>
+                                      (D.S.Nª 006-2011-VIVIENDA)</div>
+                </div>
+                <div class="row">
+                    <div class="col-6">TH.030</div>
+                    <div class="col-6">Habilitaciones para uso industrial</div>
+                </div>
+                <div class="row">
+                    <div class="col-6">TH.040</div>
+                    <div class="col-6">Habilitaciones para usos especiales</div>
+                </div>
+                <div class="row">
+                    <div class="col-6">TH.050</div>
+                    <div class="col-6">Habilitaciones en riberas y laderas</div>
+                </div>
+                <div class="row">
+                    <div class="col-6">TH.060</div>
+                    <div class="col-6">Reurbanización</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6">TITULO III<br>
+                                  EDIFICACIONES
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">CONSIDERACIONES GENERALES DE LAS EDIFICACIONES</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+            <div class="row">
+                <div class="col-6">GE.010</div>
+                <div class="col-6">Alcances y Contenido</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

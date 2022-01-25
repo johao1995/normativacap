@@ -1,0 +1,74 @@
+{% extends 'base_nfr.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'stylos/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'stylos/css/iconos.css' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+            <h1 class="text-center">Consulta de Normativas</h1>
+            <br>
+            <div class="row">
+                <div class="col-4">
+                    <a href="{% url 'form_normativas' %}" class="btn btn-primary text-white" style="background-color:#24387C;">
+                        Agregar nueva
+                    </a>
+                </div>
+            </div>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>Norma</td>
+                        <td>Titulo</td>
+                        <td>Base Legal</td>
+                        <td>Tipo Uso</td>
+                        <td>Documento</td>
+                        <td>Publicacion</td>
+                        <td>Observacion</td>
+                        <td>Palabra clave</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if norma_register %}
+                        {% for norma in norma_register %}
+                        <tr>
+                            <td>{{norma.norma}}</td>
+                            <td>{{norma.name_denom}}</td>
+                            <td>{{norma.base_legal}}</td>
+                            <td>{{norma.tipo_uso}}</td>
+                            <td>PDF</td>
+                            <td>{{norma.fecha_publi}}</td>
+                            <td>
+                                <a href="/update_datenorma/{{norma.id}}" class="btn btn-warning">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                            
+                                <a onclick="return ConfirmDelete()" href="/delete_normativa/{{norma.id}}" class="btn btn-danger">
+                                    <i class="bi bi-eraser-fill"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/register_clave/{{norma.id}}" class="btn btn-primary" style="background-color:#24387C;">Agregar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>  
+</div>
+{% endblock %}
+{% block js %}
+    <script>
+        function ConfirmDelete(){
+            let rpt = confirm("¿Estas seguro que deseas eliminar?")
+            if(rpt == true){
+                return true
+            }else{
+                return false
+            }
+        }
+    </script>
+{% endblock %}
