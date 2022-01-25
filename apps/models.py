@@ -225,7 +225,7 @@ class Register_Normativa(models.Model):
     verbose_name='Tipo de Norma')
     tipo_uso = models.CharField(blank=False,null=False,max_length=200,
     verbose_name='Tipo de Uso')
-
+    document=models.FileField(upload_to='Document_normativa',verbose_name='Documentos')
 
     class Meta:
         verbose_name_plural='Normativas Registradas'

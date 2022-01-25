@@ -9,7 +9,7 @@ from .models import Register_Normativa,Register_Palabraclave
 
 #johao
 class Register_NormativaAdmin(admin.ModelAdmin):
-    list_display=('id','norma','name_denom','base_legal','fecha_publi','tipo_norma','tipo_uso')
+    list_display=('id','norma','name_denom','base_legal','fecha_publi','tipo_norma','tipo_uso','document')
 
 class Register_PalabraclaveAdmin(admin.ModelAdmin):
     list_display=('id','name','normativa')

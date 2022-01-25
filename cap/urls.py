@@ -10,8 +10,7 @@ from apps.views import (Login, dashboard,home , index, liquid, comision, plan, p
 
 from apps.views import busque_normativa,busqueda_clavenormativa,register_palabra_clave
     #end
- 
-#from django.conf.urls import url
+from django.conf import settings
 
 
 
@@ -91,3 +90,6 @@ urlpatterns = [
     # path('configs/', configs, name='configs'),
 ]
 admin.site.site_header = 'Administracion - Normativa'
+if settings.DEBUG == True:
+    from django.conf.urls.static import static
+    urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

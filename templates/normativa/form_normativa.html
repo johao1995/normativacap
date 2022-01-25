@@ -11,7 +11,7 @@
     <div class="container ">
         <h1 class="text-center">Registrar Normativa</h1>
         <br><br>
-        <form method='POST' action="{% url 'register_norm' %}">
+        <form method='POST' action="{% url 'register_norm' %}" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="row">
                 <div class="col-6">
@@ -59,8 +59,8 @@
             <div class="row">
                 <div class="col-6">
                     <div class="form-group">
-                        <label for="exampleFormControlFile1">Subir Archivo</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        <label>Adjuntar Documento</label><br>
+                        <input type="file" name="documento"/>
                       </div>
                 </div>
             </div>

@@ -31,6 +31,7 @@ from bus_normativa.models import date_normativa
 from .models import Register_Normativa,Register_Palabraclave
 from normas.models import Subcategories_Normas,Areas_Normas
 
+
 def busqueda_clavenormativa(request):
     area_normas=Areas_Normas.objects.all()
     item_area_normas=[]
@@ -82,9 +83,9 @@ def register_normativa(request):
         fecha_publi=request.POST['fecha_publi']
         tip_norma=request.POST['tip_norma']
         tip_uso=request.POST['tip_uso']
-
+        file_pdf=request.FILES['documento']
         Register_Normativa.objects.create(norma=norma,name_denom=name_deno,base_legal=base_legal,
-        fecha_publi=fecha_publi,tipo_norma=tip_norma,tipo_uso=tip_uso)
+        fecha_publi=fecha_publi,tipo_norma=tip_norma,tipo_uso=tip_uso,document=file_pdf)
 
         return redirect('dateregister_norm')
 
