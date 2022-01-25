@@ -1,2 +1,2 @@
 
-web: gunicorn cap.wsgi
+web: gunicorn cap.wsgi --log-file -
